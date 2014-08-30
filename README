@@ -54,8 +54,20 @@ To this effect, the following functions will be implemented.
 
 RUNNING
 
-This program can be run as a script from the command line. Just make sure it's set
-to be an executable and then run it.
+This program can be run as a script from the command line. To do so, you need
+to add the Lisp interpreter to the source file. I am going to assume you are
+using the `clisp` List interpreter; change the command name to match your
+List interpreter.
+
+$ which clisp > tmp
+$ cat hw1.l >> tmp
+$ mv tmp hw1.l
+
+Now you can invoke the file to be run by the shell.
+
+$ sh ./hw1.l
+
+Alternatively, set it as an executable and run it directly.
 
 $ chmod +x ./hw1.l
 $ ./hw1.l
