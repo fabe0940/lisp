@@ -1,0 +1,68 @@
+SUMMARY
+
+CS 210 Homework #1: Lisp
+
+This program is designed to help us gain familiarity with the Common Lisp language.
+To this effect, the following functions will be implemented.
+
+* recurse on n: foo(n)
+
+    If n is not an integer, foo(n) should return nil. If n <= 1, foo(n) should
+    return 1. If n > 1, foo(n) should return foo(n-1) * (n/2) 
+
+* recurse on L (reduce): signsum(L)
+
+    If L is not a list, signsum(L) should return nil. If L is a list, return a
+    sum obtained by walking down L and for each element x of list L, adding 1 if
+    x is positive, subtracting 1 if x is negative, and adding 0 if x is 0 or a
+    non-number. 
+
+* recurse on L (mapping): squaredevens(L)
+
+    If L is not a list, squaredevens(L) should return nil. Otherwise, squaredevens(L)
+    should return the same length as L, whose elements are squared (if they are
+    even numbered integers), or nil (if they are not integers or not even). 
+
+* recurse on list of pairs: polyval(L, x)
+
+    L must be a list whose elements are lists of length 2. L denotes a polynomial
+    function for which each element represents a (coefficient exponent) pair.
+
+    For example ((2 3) (5 1)) denotes 2x3+5x1. polyval(L, x) evaluates the polynomial
+    function given by L for a particular value of x.
+
+* recurse on list of lists: hasp(LL, n)
+
+    walk through arbitrarily deep lists of lists inside LL, and return t if atom
+    n appears within LL, or nil if it does not. 
+
+* recurse on list of lists: ncons(LL)
+
+    return the number of cons cells in arbitrarily deep list of lists LL. 
+
+* recurse on string: nvowels(s)
+
+    Compute and return the number of occurrences of the letters a, e, i, o or u in the
+    string s. 
+
+* recurse on string: bit2list(s)
+
+    Build and return a list the same length as s, in which for each element of the
+    list is t if the corresponding character in s was 1, and nil if the corresponding
+    character in s was not 1. For example, bit2list("101") is (t nil t) 
+
+
+RUNNING
+
+This program can be run as a script from the command line. Just make sure it's set
+to be an executable and then run it.
+
+$ chmod +x ./hw1.l
+$ ./hw1.l
+
+
+ABOUT
+
+Written on 29 August 2014
+
+Licensed under the WTF Public License.
