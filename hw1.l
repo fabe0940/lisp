@@ -83,3 +83,63 @@
 		)
 	)
 )
+
+(defun ncons (LL)
+	(if (consp LL)
+		(+ 1 (ncons (car LL)) (ncons (cdr LL)))
+		0
+	)
+)
+
+(defun nvowels_isvowel (ch)
+	(cond
+		((eq ch #\A) 1)
+		((eq ch #\a) 1)
+		((eq ch #\E) 1)
+		((eq ch #\e) 1)
+		((eq ch #\I) 1)
+		((eq ch #\i) 1)
+		((eq ch #\O) 1)
+		((eq ch #\o) 1)
+		((eq ch #\U) 1)
+		((eq ch #\u) 1)
+		(t 0)
+	)
+)
+
+(defun nvowels_help (L)
+	(cond
+		((not (listp L)) 0)
+		((null L) 0)
+		(t (+ (nvowels_isvowel(car L)) (nvowels_help (cdr L))))
+	)
+)
+
+(defun nvowels (s)
+	(cond
+		((not (stringp s)) 0)
+		(t (nvowels_help (coerce s 'list)))
+	)
+)
+
+(defun bit2list_val (ch)
+	(cond
+		((eq ch #\1) t)
+		(t nil)
+	)
+)
+
+(defun bit2list_help (L)
+	(cond
+		((not (listp L)) nil)
+		((null L) nil)
+		(t (cons (bit2list_val (car L)) (bit2list_help (cdr L))))
+	)
+)
+
+(defun bit2list (s)
+	(cond
+		((not (stringp s)) nil)
+		(t (bit2list_help (coerce s 'list)))
+	)
+)
